@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil Patrick Columna - Home</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, #0b74ad 0%, #1a1629 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Home Page Content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, #2cf4ff1a 0%, rgba(255,34,211,0.1) 100%);
+            border-radius: 10px;
+            max-width: 1000px;
+            width: 100%;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            color: #4023fc;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .hero p {
+            font-size: 1.5em;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .hero p.subtitle {
+            font-size: 1.2em;
+            color: #888;
+        }
+
+        .hero p.description {
+            font-size: 1em;
+            margin-top: 20px;
+        }
+
+        .cta-button {
+            background: linear-gradient(135deg, #0b74ad 0%, #1a1629 100%);
+            color: white;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .hero p.subtitle {
+                font-size: 1em;
+            }
+
+            .hero p.description {
+                font-size: 0.95em;
+            }
+
+            .hero {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Neil Patrick</div>
+        </div>
+    </nav>
+
+    <!-- Home Page -->
+    <div class="container">
+        <div class="hero">
+            <h1>Welcome to My Portfolio</h1>
+            <p>Hi! I'm Neil Patrick Columna</p>
+            <p class="subtitle">Bachelor of Science in Information Systems Student</p>
+            <p class="description">Passionate about web development, business systems, and creating innovative solutions.</p>
+            <button class="cta-button" onclick="alert('Thank you for your interest! This button would normally link to the resume page.')">View My Resume</button>
+        </div>
+    </div>
+</body>
+</html>

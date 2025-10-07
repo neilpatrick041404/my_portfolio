@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neil Patrick Columna - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f4f4f4;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background: linear-gradient(135deg, #0b74ad 0%, #1a1629 100%);
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .nav-brand {
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* Resume Container */
+        .resume-container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0b74ad 0%, #1a1629 100%);
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid rgb(26, 22, 41);
+            object-fit: cover;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            flex-shrink: 0;
+        }
+
+        .header-content {
+            flex: 1;
+        }
+
+        .name {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            opacity: 0.9;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            font-size: 0.95em;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .main-content {
+            padding: 40px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #4023fc;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4023fc;
+            font-weight: bold;
+        }
+
+        .about-text {
+            font-size: 1.1em;
+            line-height: 1.8;
+            color: #555;
+            text-align: justify;
+        }
+
+        .education-button {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            border: 2px solid #667eea;
+            padding: 15px 25px;
+            margin: 5px;
+            border-radius: 8px;
+            font-size: 1.1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-block;
+        }
+
+        .education-button:hover {
+            background: rgba(102, 126, 234, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.2);
+        }
+
+        .education-button.active {
+            background: linear-gradient(135deg, #0b74ad 0%, #1a1629 100%);
+            color: white;
+            border-color: #667eea;
+        }
+
+        .education-buttons {
+            margin-bottom: 20px;
+        }
+
+        .education-content {
+            display: none;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: all 0.3s ease;
+        }
+
+        .education-content.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .education-item {
+            background: #f8f9ff;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #24029f;
+        }
+
+        .degree {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .institution {
+            font-size: 1.1em;
+            color: #667eea;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .year {
+            color: #888;
+            font-size: 0.95em;
+            margin-bottom: 10px;
+        }
+
+        .description {
+            color: #666;
+            font-style: italic;
+            line-height: 1.6;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category {
+            background: #f8f9ff;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #24029f;
+        }
+
+        .skill-category h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            padding: 5px 0;
+            color: #666;
+        }
+
+        .skill-list li:before {
+            content: "▪ ";
+            color: #667eea;
+            font-weight: bold;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .name {
+                font-size: 2em;
+            }
+
+            .contact-info {
+                justify-content: center;
+            }
+
+            .main-content {
+                padding: 20px;
+            }
+
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">Neil Patrick</div>
+        </div>
+    </nav>
+
+    <!-- Resume Page -->
+    <div class="container">
+        <div class="resume-container">
+            <div class="header">
+                <img src="profile.jpg" alt="Profile Picture" class="profile-image">
+                <div class="header-content">
+                    <h1 class="name">Neil Patrick L. Columna</h1>
+                    <p class="title">Bachelor of Science in Information System</p>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span>📧</span>
+                            <span>neilpatrick041404@gmail.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📱</span>
+                            <span>0963 204 0255</span>
+                        </div>
+                        <div class="contact-item">
+                            <span>📍</span>
+                            <span>Bulan, Sorsogon</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <!-- About Section -->
+                <div class="section">
+                    <h2 class="section-title">About Me</h2>
+                    <p class="about-text">
+                        A Bachelor of Science in Information System student with a strong interest in business systems. 
+                        Skilled in web development and familiar with Service Studio Outsystems for application development. 
+                        Eager to apply academic knowledge and skills in a real world setting through On-the-Job Training. 
+                        Committed to contributing effectively to the organization while gaining valuable experience in 
+                        Information Systems.
+                    </p>
+                </div>
+
+                <!-- Education Section -->
+                <div class="section">
+                    <h2 class="section-title">Education</h2>
+                    
+                    <div class="education-buttons">
+                        <button class="education-button active" onclick="showEducation('college')">
+                            College Education
+                        </button>
+                        <button class="education-button" onclick="showEducation('highschool')">
+                            High School Education
+                        </button>
+                    </div>
+
+                    <div class="education-content active" id="college-content">
+                        <div class="education-item">
+                            <div class="degree">Bachelor of Science in Information System</div>
+                            <div class="institution">Sorsogon State University - Bulan Campus</div>
+                            <div class="year">2022 - 2026</div>
+                            <div class="description">
+                                Relevant coursework includes Evaluation of Business Performance, Project Management, 
+                                Information Management, Systems Analysis and Designs, and Applications Development and 
+                                Emerging Technologies. Recognized as a Dean's Lister for academic excellence.
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="education-content" id="highschool-content">
+                        <div class="education-item">
+                            <div class="degree">High School Diploma</div>
+                            <div class="institution">Bulan National High School</div>
+                            <div class="year">2016 - 2022</div>
+                            <div class="description">
+                                Accounting, Business and Management (ABM) graduate with honors.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skills Section -->
+                <div class="section">
+                    <h2 class="section-title">Skills</h2>
+                    <div class="skills-grid">
+                        <div class="skill-category">
+                            <h4>Technical Skills</h4>
+                            <ul class="skill-list">
+                                <li>Web Development</li>
+                                <li>Service Studio Outsystem (Intermediate)</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Soft Skills</h4>
+                            <ul class="skill-list">
+                                <li>Communication</li>
+                                <li>Team Leadership</li>
+                                <li>Problem Solving</li>
+                                <li>Time Management</li>
+                            </ul>
+                        </div>
+                        <div class="skill-category">
+                            <h4>Languages</h4>
+                            <ul class="skill-list">
+                                <li>English (Intermediate)</li>
+                                <li>Tagalog (Fluent)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Education Toggle
+        function showEducation(level) {
+            const allContent = document.querySelectorAll('.education-content');
+            const allButtons = document.querySelectorAll('.education-button');
+            
+            allContent.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            allButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+            
+            document.getElementById(level + '-content').classList.add('active');
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>
